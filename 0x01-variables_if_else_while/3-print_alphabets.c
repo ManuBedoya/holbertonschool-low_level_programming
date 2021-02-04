@@ -1,26 +1,22 @@
 #include <stdio.h>
 
 /**
- *main -> print Alphabet in lower and UpperCase
+ *main -> Print the alphabet
  *
- *Return: 0 always
+ *Return: Always 0
  */
 int main(void)
 {
-	int a = 97;
+	char ch;
 
-	for (a; a < 123; a++)
+	for (ch = 'a' ; ch <= 'z' ; ch++)
 	{
-		putchar(a);
+	putchar(ch);
 	}
-
-	a = 65;
-
-	for (a; a < 91; a++)
+	for (ch = 'A' ; ch <= 'Z' ; ch++)
 	{
-		putchar(a);
+	putchar(ch);
 	}
-
 	putchar('\n');
 	return (0);
 }
