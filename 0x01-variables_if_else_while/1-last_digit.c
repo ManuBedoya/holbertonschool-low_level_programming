@@ -28,4 +28,3 @@ int main(void)
 		       n, ld);
 	return (0);
 }
-
