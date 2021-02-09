@@ -3,7 +3,7 @@
 
 /**
  *print_times_table - print a patron numeric
- *
+ *@n: Number
  *Return: void
  */
 void print_times_table(int n)
@@ -13,7 +13,7 @@ void print_times_table(int n)
 
 	if (n >= 0 && n <= 15)
 	{
-		while (b <= n)
+		while (b++ <= n)
 		{
 			for (a = 0; a <= n ; a++)
 			{
@@ -33,22 +33,18 @@ void print_times_table(int n)
 				}
 				if (result >= 10 && result < 100)
 				{
-					int a = result / 10;
-					int b = result % 10;
-					_putchar(a + '0');
-					_putchar(b + '0');
+					_putchar((result / 10) + '0');
+					_putchar((result % 10) + '0');
 				}
 				else if (result >= 100)
 				{
-					int tmp = result / 10;
-					_putchar(tmp / 10 + '0');
-					_putchar(tmp % 10 + '0');
+					_putchar((result / 10) / 10 + '0');
+					_putchar((result / 10) % 10 + '0');
 					_putchar((result % 10) + '0');
 				}
 				else
 					_putchar(result + '0');
 			}
-			b++;
 			_putchar('\n');
 		}
 	}
