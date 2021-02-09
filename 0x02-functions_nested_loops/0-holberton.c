@@ -1,6 +1,4 @@
-#include <holberton.h>
-#include <unistd.h>
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  *main - Print message
@@ -16,6 +14,7 @@ int main(void)
 	{
 		_putchar(message[position]);
 	}
+	_putchar('\n');
 	return (0);
 }
 
