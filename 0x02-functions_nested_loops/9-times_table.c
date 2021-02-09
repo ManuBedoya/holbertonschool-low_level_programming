@@ -30,6 +30,8 @@ void times_table(void)
 			{
 				_putchar(44);
 				_putchar(32);
+				if(a == 8 && result < 10)
+					_putchar(32);
 			}
 		}
 		n++;
