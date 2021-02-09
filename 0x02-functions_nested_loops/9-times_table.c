@@ -16,6 +16,13 @@ void times_table(void)
 		{
 			int result = a * n;
 
+			if (a != 0)
+			{
+			_putchar(44);
+			_putchar(32);
+			if (result < 10)
+				_putchar(32);
+			}
 			if (result >= 10)
 			{
 				int a = result / 10;
@@ -26,13 +33,6 @@ void times_table(void)
 			}
 			else
 				_putchar(result + '0');
-			if (a != 9)
-			{
-				_putchar(44);
-				_putchar(32);
-				if (result < 10)
-					_putchar(32);
-			}
 		}
 		n++;
 		_putchar('\n');
