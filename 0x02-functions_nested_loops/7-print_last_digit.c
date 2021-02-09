@@ -3,14 +3,15 @@
 
 /**
  *print_last_digit - search the last digit of the number
- *@n: number
+ *@r: number
  *
  *Return: Last digit of the number
  */
-int print_last_digit(int n)
+int print_last_digit(int r)
 {
-	n = abs(n);
-	n = n % 10;
-	_putchar(n + '0');
-	return (n);
+	r = abs(r);
+
+	r = r % 10;
+	_putchar(r + '0');
+	return (r);
 }
