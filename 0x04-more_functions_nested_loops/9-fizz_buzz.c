@@ -3,7 +3,7 @@
 /**
  *main - print a numbers from 0 to 100 and push fizz buszz or *fizzbuszz
  *
- *
+ *Return: Always 0
  */
 int main(void)
 {
@@ -21,5 +21,5 @@ int main(void)
 			printf("%d ", i);
 	}
 	putchar('\n');
-	return 0;
+	return (0);
 }

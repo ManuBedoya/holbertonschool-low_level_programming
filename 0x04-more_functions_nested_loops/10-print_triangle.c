@@ -1,7 +1,8 @@
 #include "holberton.h"
 
 /**
- *print_triangle - print a numbers from 0 to 100 and push fizz buszz or *fizzbuszz
+ *print_triangle - print a numbers from 0 to 100 and push fizz buszz
+ *orfizzbuszz
  *@size: size
  *
  */
@@ -28,5 +29,4 @@ void print_triangle(int size)
 		_putchar('\n');
 		stop--;
 	}
-
 }
