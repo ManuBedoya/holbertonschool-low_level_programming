@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <string.h>
-#include <stdio.h>
 
 /**
  *calculateLenght - Calculate number of strings
@@ -25,7 +23,7 @@ int calculateLenght(char *s)
 */
 char *_strcpy(char *dest, char *src)
 {
-	unsigned int i;
+	int i = 0;
 
 	while (i < calculateLenght(src))
 	{
