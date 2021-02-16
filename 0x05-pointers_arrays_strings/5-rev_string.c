@@ -23,15 +23,16 @@ void rev_string(char *s)
 {
 	int i;
 	int j = 0;
-	char s1[10];
+	int count = calculateLenght(s);
+	char s1[100];
 
-	for (i = calculateLenght(s) - 1; i >= 0; i--)
+	for (i = count - 1; i >= 0; i--)
 	{
 		s1[j] = s[i];
 		j++;
 	}
 
-	for (i = 0; i < calculateLenght(s); i++)
+	for (i = 0; i < count; i++)
 	{
 		*(s + i) = s1[i];
 	}
