@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <string.h>
 
 /**
  *calculateLenght - Calculate number of strings
@@ -27,11 +26,9 @@ void puts_half(char *str)
 	int start = count / 2;
 
 	if (count % 2 != 0)
-	{
 		start = (count - 1) / 2;
-	}
 
-	for (i = start; i < count; i++)
+	for (i = start + 1; i < count; i++)
 		_putchar(str[i]);
 	_putchar('\n');
 }
