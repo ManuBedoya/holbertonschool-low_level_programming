@@ -3,6 +3,21 @@
 #include <stdio.h>
 
 /**
+ *calculateLenght - Calculate number of strings
+ * @s: String
+ * Return: the length of the number!!
+*/
+
+int calculateLenght(char *s)
+{
+	int count = 0;
+
+	while (s[count] != 0)
+		count++;
+	return (count);
+}
+
+/**
  * rev_string - Reverses a String
  * @s: String
 */
@@ -12,7 +27,7 @@ void rev_string(char *s)
 	int j = 0;
 	char s1[10];
 
-	for (i = strlen(s) - 1; i >= 0; i--)
+	for (i = calculateLenght(s) - 1; i >= 0; i--)
 	{
 		s1[j] = s[i];
 		j++;
