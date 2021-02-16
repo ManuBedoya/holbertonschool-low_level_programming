@@ -1,6 +1,4 @@
 #include "holberton.h"
-#include <string.h>
-#include <stdio.h>
 
 /**
  *calculateLenght - Calculate number of strings
