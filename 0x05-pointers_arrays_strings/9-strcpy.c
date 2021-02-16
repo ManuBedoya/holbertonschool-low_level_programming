@@ -3,6 +3,21 @@
 #include <stdio.h>
 
 /**
+ *calculateLenght - Calculate number of strings
+ * @s: String
+ * Return: the length of the number!!
+*/
+
+int calculateLenght(char *s)
+{
+	int count = 0;
+
+	while (s[count] != 0)
+		count++;
+	return (count);
+}
+
+/**
  * *_strcpy - Copie a pointer to another ponter
  * @dest: destinity
  * @src: Origen
@@ -12,7 +27,7 @@ char *_strcpy(char *dest, char *src)
 {
 	unsigned int i;
 
-	while (i < strlen(src))
+	while (i < calculateLenght(src))
 	{
 		dest[i] = src[i];
 		i++;
