@@ -33,7 +33,7 @@ void rev_string(char *s)
 		j++;
 	}
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < calculateLenght(s); i++)
 	{
 		*(s + i) = s1[i];
 	}
