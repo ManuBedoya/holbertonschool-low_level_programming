@@ -1,6 +1,12 @@
 #include "holberton.h"
 #include <string.h>
-/***/
+/**
+ **_strncpy - Copie a string
+ *@dest: Array
+ *@src: Array
+ *@n: number of elements
+ *Return: array
+ */
 char *_strncpy(char *dest, char *src, int n)
 {
 

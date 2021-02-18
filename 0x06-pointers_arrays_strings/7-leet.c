@@ -1,3 +1,12 @@
+#include "holberton.h"
+
+/**
+ **leet - Replace any Letter for numbers
+ *@c: Array
+ *
+ *Return: Array
+ */
+
 char *leet(char *c)
 {
 	int i;

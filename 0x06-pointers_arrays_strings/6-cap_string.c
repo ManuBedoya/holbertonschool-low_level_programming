@@ -1,6 +1,11 @@
 #include "holberton.h"
 
-/***/
+/**
+ **cap_string - Change to UpperCase Capatalize
+ *
+ *@c: Array
+ *Return: Array
+ */
 
 char *cap_string(char *c)
 {

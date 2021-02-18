@@ -1,8 +1,11 @@
 #include "holberton.h"
 
 /**
- * 
- * 
+ **_strncat - Concatenate 2 Strings
+ *@dest: Array
+ *@src: Array
+ *@n: Limit
+ * Return: array with the 2 strings concataned
  */
 char *_strncat(char *dest, char *src, int n)
 {
