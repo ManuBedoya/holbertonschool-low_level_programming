@@ -13,44 +13,27 @@ char *rot13(char *c)
 
 	while (c[i] != '\0')
 	{
-	back:
-		if ((c[i] < 'a' || c[i] > 'z') && (c[i] < 'A' || c[i] > 'Z'))
-		{
-			i++;
-			goto back;
+back:
+	if (((c[i] < 'a' || c[i] > 'z') && (c[i] < 'A' || c[i] > 'Z')))
+	{
+		i++;
+		goto back;
 		}
-
 		else
 		{
 			for (; c[i] >= 'a' && c[i] <= 'z' && j != 1; j--)
 			{
 				int positionLetter = c[i] - 97;
-				int enocodeLetter = (positionLetter + 13) % 26;
 
-				c[i] = enocodeLetter + 97;
+				c[i] = ((positionLetter + 13) % 26) + 97;
 				i++;
 				goto back;
 			}
 			int positionLetter = c[i] - 65;
-			int enocodeLetter = (positionLetter + 13) % 26;
 
-			c[i] = enocodeLetter + 65;
+			c[i] = ((positionLetter + 13) % 26) + 65;
 			i++;
 		}
-
-		/*if (c[i] >= 'a' && c[i] <= 'z')
-		{
-			int positionLetter = c[i] - 97;
-			int enocodeLetter = (positionLetter + 13) % 26;
-
-			c[i] = enocodeLetter + 97;
-			continue;
-		}
-
-		int positionLetter = c[i] - 65;
-		int enocodeLetter = (positionLetter + 13) % 26;
-
-		c[i] = enocodeLetter + 65;*/
 	}
 	return (c);
 }
