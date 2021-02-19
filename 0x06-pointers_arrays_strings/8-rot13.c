@@ -8,28 +8,21 @@
  */
 char *rot13(char *c)
 {
-	int i = 0;
-	int j = 0;
-	int positionLetter;
+	int i = 0, j = 0;
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-back:
-	while (c[i] != '\0')
+	while (c[i])
 	{
-		if (((c[i] < 'a' || c[i] > 'z') && (c[i] < 'A' || c[i] > 'Z')))
+		for (j = 0; input[j]; j++)
 		{
-			i++;
-			goto back;
+			if (c[i] == input[j])
+			{
+				c[i] = output[j];
+				break;
+			}
 		}
-		for (; c[i] >= 'a' && c[i] <= 'z' && j != 1; j--)
-		{
-			positionLetter = c[i] - 97;
-			c[i] = ((positionLetter + 13) % 26) + 97;
-			i++;
-			goto back;
-		}
-		positionLetter = c[i] - 65;
-		c[i] = ((positionLetter + 13) % 26) + 65;
-		i++;
+	i++;
 	}
 	return (c);
 }
