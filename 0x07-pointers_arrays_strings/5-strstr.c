@@ -15,7 +15,6 @@ char *wordExist(char *haystack, char *needle, int i)
 	for (j = 0; j < i; j++)
 		haystack++;
 
-	char *aux = haystack;
 	int k = 0;
 
 	for (j = 0; needle[j]; j++)
@@ -23,7 +22,7 @@ char *wordExist(char *haystack, char *needle, int i)
 		if (haystack[k] == needle[j])
 			k++;
 		else
-			return (aux);
+			return ('\0');
 	}
 	return (haystack);
 }
@@ -45,7 +44,7 @@ char *_strstr(char *haystack, char *needle)
 		if (haystack[i] == needle[0])
 		{
 			res = wordExist(haystack, needle, i);
-			if (res[0] == needle[0])
+			if (res[0] != '\0')
 				return (res);
 		}
 	}
