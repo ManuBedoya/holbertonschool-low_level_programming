@@ -1,5 +1,11 @@
 #include "holberton.h"
 
+/**
+ *_strpbrk - Find Word
+ *@s: String
+ *@accept: Letter acepted
+ *Return: null or string since the word accepted
+ */
 char *_strpbrk(char *s, char *accept)
 {
 
