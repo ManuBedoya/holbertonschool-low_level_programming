@@ -1,33 +1,6 @@
 #include "holberton.h"
 
 /**
- *wordExist - Foun a Word
- *
- *@haystack:  haystack
- *@needle: needle
- *@i: i
- *Return: char*
- */
-char *wordExist(char *haystack, char *needle, int i)
-{
-	int j;
-
-	for (j = 0; j < i; j++)
-		haystack++;
-
-	int k = 0;
-
-	for (j = 0; needle[j]; j++)
-	{
-		if (haystack[k] == needle[j])
-			k++;
-		else
-			return ('\0');
-	}
-	return (haystack);
-}
-
-/**
  *_strstr - Start since a word
  *
  *@haystack: haystack
@@ -37,16 +10,15 @@ char *wordExist(char *haystack, char *needle, int i)
 char *_strstr(char *haystack, char *needle)
 {
 	int i;
-	char *res;
 
-	for (i = 0; haystack[i]; i++)
+	for (i = 0; haystack[i]; haystack++)
 	{
-		if (haystack[i] == needle[0])
+		while (haystack[i] && needle[i] && haystack[i] == needle[i])
 		{
-			res = wordExist(haystack, needle, i);
-			if (res[0] != '\0')
-				return (res);
+			i++;
 		}
+		if (!needle[i])
+			return (haystack);
 	}
 	return ('\0');
 }
