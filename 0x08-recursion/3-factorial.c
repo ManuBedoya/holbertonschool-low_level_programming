@@ -1,6 +1,10 @@
 #include "holberton.h"
 
-/***/
+/**
+ *factorial - calculate of factorial
+ *@n: Number
+ *Return: Factorial of number
+ */
 int factorial(int n)
 {
 	if (n == 0)
