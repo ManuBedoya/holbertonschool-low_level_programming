@@ -42,7 +42,7 @@ int is_palindromeAux(char *s, int i, int e)
 int is_palindrome(char *s)
 {
 	if (s[0] == '\0')
-		return (1);
+		return (0);
 	else if (s[0] == s[_strlen_recursion(s) - 1])
 	{
 		return (is_palindromeAux(s, 0,
