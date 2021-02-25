@@ -27,7 +27,7 @@ int _strlen_recursion(char *s)
 int is_palindromeAux(char *s, int i, int e)
 {
 	if ((i == e) || (_strlen_recursion(s) % 2 == 0 &&
-			 i + 1 == e))
+			 i + 1 == e && (s[i] == s[e])))
 		return (1);
 	if (s[i] == s[e])
 		return (is_palindromeAux(s, i + 1, e - 1));
