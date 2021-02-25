@@ -8,12 +8,12 @@
  */
 int operation(int original, int nVariety)
 {
-	if (nVariety == 0)
+	if (nVariety == original / 2)
 		return (-1);
 	if (nVariety * nVariety == original)
 		return (nVariety);
 	else
-		return (operation(original, nVariety - 1));
+		return (operation(original, nVariety + 1));
 }
 
 
@@ -30,5 +30,5 @@ int _sqrt_recursion(int n)
 		return (1);
 	else if (n < 0)
 		return (-1);
-	return (operation(n, n / 2));
+	return (operation(n, 1));
 }
