@@ -7,7 +7,7 @@
  *@argv: Store of the commands line
  *Return: 0 or 1
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	int i = 0;
 	int add = 0;

@@ -7,7 +7,7 @@
  *@argv: Store of the commands line
  *Return: 0 or 1
  */
-int main(int argc, char* argcv[])
+int main(int argc, char *argv[])
 {
 	if (argc == 3)
 	{

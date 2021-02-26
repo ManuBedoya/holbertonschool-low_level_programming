@@ -6,7 +6,7 @@
  *@argv: Store of the commands line
  *Return: 0
  */
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
 	printf("%d", argc - 1);
 	argv[argc - 1] = "\n";
