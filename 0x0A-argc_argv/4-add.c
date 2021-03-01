@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	int i = 0;
 	int add = 0;
 
-	while (argv[i][0] < '0' || argv[i][0] > '9')
+	while (argv[1][0] < '0' || argv[1][0] > '9')
 	{
 		printf("Error\n");
 		return (1);
