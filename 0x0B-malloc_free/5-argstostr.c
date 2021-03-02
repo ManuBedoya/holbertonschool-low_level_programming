@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- *argstostr - fill the string with the arguments
+ **argstostr - fill the string with the arguments
  *@ac: number of arguments
  *@av: array of arguments
  *Return: array with all arguments
