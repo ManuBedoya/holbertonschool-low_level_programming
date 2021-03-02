@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include "stdlib.h"
+#include <stdlib.h>
 
 /**
  *create_array - Create a dinamic array
