@@ -36,6 +36,6 @@ int main(int argc, char *argv[])
 			sum += 1;
 		numberCoins++;
 	}
-	printf("%i\n", numberCoins);
+		printf("%d\n", numberCoins);
 	return (0);
 }
