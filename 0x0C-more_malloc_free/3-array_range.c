@@ -22,6 +22,6 @@ int *array_range(int min, int max)
 	if (p == NULL)
 		return (NULL);
 	for (i = 0; i < size; i++)
-		memory[index] = min + i;
-	return (memory);
+		p[i] = min + i;
+	return (p);
 }
