@@ -2,7 +2,10 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-
+/**
+ * print_all - Function that prints any type of data
+ * @format: format in string
+*/
 
 void print_all(const char * const format, ...)
 {
@@ -35,7 +38,7 @@ void print_all(const char * const format, ...)
 		}
 		if (format[i + 1] && (format[i] == 'i' || format[i] == 'f' ||
 			format[i] == 'c' || format[i] == 's'))
-				printf(", ");
+			printf(", ");
 		i++;
 	}
 	va_end(ap);
