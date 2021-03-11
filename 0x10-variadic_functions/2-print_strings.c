@@ -2,7 +2,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 
-/***/
+/**
+ * print_strings - Function that prints strings
+ * @separator: Separators between strings
+ * @n: Number of arguments
+*/
 void print_strings(const char *separator, const unsigned int n, ...)
 {
 	if (separator != NULL)
@@ -16,10 +20,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		{
 			aux = va_arg(ap, char*);
 			if (aux == NULL)
-				if (i + 1 != n)
-					printf("(nil)%s", separator);
-				else
-					printf("(nil)");
+				printf("(nil)");
 			else
 				if (i + 1 != n)
 					printf("%s%s", aux, separator);
