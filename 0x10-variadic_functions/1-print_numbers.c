@@ -2,10 +2,14 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-/***/
+/**
+ *print_numbers - function that Print numbers
+ *@separator: Separator between numbers
+ *@n: number of arguments
+*/
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
-	if (separator != NULL)
+	if (separator != NULL || n >= 0)
 	{
 		va_list ap;
 		unsigned int i;
