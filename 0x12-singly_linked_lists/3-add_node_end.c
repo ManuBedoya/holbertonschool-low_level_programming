@@ -23,7 +23,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	{}
 
 	aux->len = i;
-	aux->str = (char *) str;
+	aux->str = straux;
 	aux->next = NULL;
 	if (p == NULL)
 	{
