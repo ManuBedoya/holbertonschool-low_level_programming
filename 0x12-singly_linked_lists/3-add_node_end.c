@@ -6,6 +6,7 @@
  * add_node_end - Add a new node in the end of the list
  * @head: the header of the list
  * @str: String of the value in the strict
+ * Return: null if fails or the address of the new node
 */
 list_t *add_node_end(list_t **head, const char *str)
 {
