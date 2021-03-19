@@ -1,10 +1,16 @@
 #include "lists.h"
 #include <stdlib.h>
 
+/**
+ * add_node_end - Add a new node in the end of the list
+ * @head: the header of the list
+ * @str: String of the value in the strict
+*/
 list_t *add_node_end(list_t **head, const char *str)
 {
 	int i;
 	list_t *p = *head;
+	char *straux = strdup(str);
 
 	list_t *aux = malloc(sizeof(list_t));
 
