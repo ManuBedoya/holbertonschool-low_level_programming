@@ -17,17 +17,17 @@ unsigned long int _pow(int expo)
 	return (result);
 }
 /**
- * set_bit - change a bit
+ * clear_bit - change a bit
  * @n: pointer to Decimal
  * @index: positii¿on t  to change
- * Return: Binary
+ * Return: 1 or -1
 */
 int clear_bit(unsigned long int *n, unsigned int index)
 {
 	unsigned long int tmp = 0, sum = 0, aux;
 	int i;
 
-	if (*n == 0 )
+	if (*n == 0)
 	{
 		*n = 0;
 		return (1);
