@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 
 /**
  * read_textfile - Read a file and print
@@ -9,7 +10,7 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	ssize_t n;
-	char *buf[letters + 1];
+	char *buf;
 	int fd;
 
 	if (filename == '\0')
@@ -17,11 +18,15 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (0);
+	buf = malloc(sizeof(char) * letters);
+	if (!buf)
+		return (0);
 	n = read(fd, buf, letters);
 	if (n == -1)
 		return (0);
 	buf[n] = '\0';
 	close(fd);
+	free(buf);
 	n = write(STDOUT_FILENO, buf, (n - 1));
 	if (n == -1)
 		return (0);
