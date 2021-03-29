@@ -17,21 +17,21 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		write(STDERR_FILENO, "Usage: cp file_from file_to\n", 28);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fdRead = open(argv[1], O_RDONLY);
 	nRead = read(fdRead, buf, 1024);
 	if (fdRead == -1 || nRead == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n", 45);
+		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
 		exit(98);
 	}
 	fdCreate = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	nWrite = write(fdCreate, buf, nRead);
 	if (fdCreate == -1 || nWrite == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n", 39);
+		dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
 		exit(99);
 	}
 	nCloseC = close(fdCreate);
