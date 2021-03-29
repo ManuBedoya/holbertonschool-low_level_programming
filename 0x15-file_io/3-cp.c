@@ -3,6 +3,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <stdlib.h>
+#include <stdio.h>
 /**
  * main - entry point
  * @argc: number of arguments
@@ -11,7 +12,7 @@
 */
 int main(int argc, char *argv[])
 {
-	int fdCreate, fdRead, n;
+	int fdCreate, fdRead, nRead, nWrite, nCloseR, nCloseC;
 	char *buf[1024];
 
 	if (argc != 3)
@@ -20,24 +21,24 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fdRead = open(argv[1], O_RDONLY);
-	if (fdRead == -1)
+	nRead = read(fdRead, buf, 1024);
+	if (fdRead == -1 || nRead == -1)
 	{
 		write(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n", 45);
 		exit(98);
 	}
-	fdCreate = open(argv[2], O_CREAT | O_WRONLY, 00664);
-
-	if (fdCreate == -1)
+	fdCreate = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
+	nWrite = write(fdCreate, buf, nRead);
+	if (fdCreate == -1 || nWrite == -1)
 	{
 		write(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n", 39);
 		exit(99);
 	}
-	n = read(fdRead, buf, 1024);
-	buf[n] = '\0';
-	write(fdCreate, buf, n);
-	if (!(close(fdCreate) || close(fdCreate)))
+	nCloseC = close(fdCreate);
+	nCloseR = close(fdRead);
+	if (nCloseC == -1 || nCloseR == -1)
 	{
-		write(STDERR_FILENO, "Error: Can't close fd FD_VALUE\n", 39);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdCreate);
 		exit(100);
 	}
 	return (0);
