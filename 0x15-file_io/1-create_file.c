@@ -20,7 +20,7 @@ int getLen(char *content)
 */
 int create_file(const char *filename, char *text_content)
 {
-	int fd, len;
+	int fd, len, nWrite;
 
 	if (filename == NULL)
 		return (-1);
@@ -28,7 +28,9 @@ int create_file(const char *filename, char *text_content)
 	fd = open(filename, O_CREAT | O_WRONLY, 00600);
 	if (fd == -1)
 		return (-1);
-	write(fd, text_content, len);
+	nWrite = write(fd, text_content, len);
 	close(fd);
+	if (nWrite == -1)
+		return (-1);
 	return (1);
 }
