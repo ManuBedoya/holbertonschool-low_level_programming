@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 /**
  * read_textfile - Read a file and print
  * @filename: The name of the file
@@ -15,9 +16,9 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	if (fd == -1)
 		return (0);
-	read(fd, buf, letters);
-	buf[letters + 1] = '\0';
+	n = read(fd, buf, letters);
+	buf[n] = '\0';
 	close(fd);
-	n = write(STDOUT_FILENO, buf, letters);
+	n = write(STDOUT_FILENO, buf, (n - 1));
 	return (n);
 }
