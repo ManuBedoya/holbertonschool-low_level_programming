@@ -24,14 +24,14 @@ int main(int argc, char *argv[])
 	nRead = read(fdRead, buf, 3000);
 	if (fdRead == -1 || nRead == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	fdCreate = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 00664);
 	nWrite = write(fdCreate, buf, nRead);
 	if (fdCreate == -1 || nWrite == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	nCloseC = close(fdCreate);
