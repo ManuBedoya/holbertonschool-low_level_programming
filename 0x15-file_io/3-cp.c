@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	fdRead = open(argv[1], O_RDONLY);
-	nRead = read(fdRead, buf, 2040);
+	nRead = read(fdRead, buf, 3000);
 	if (fdRead == -1 || nRead == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file NAME_OF_THE_FILE\n");
