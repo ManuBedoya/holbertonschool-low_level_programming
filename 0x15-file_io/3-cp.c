@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int fdCreate, fdRead, nRead, nWrite, nCloseR, nCloseC;
-	char *buf[2040];
+	char *buf[3000];
 
 	if (argc != 3)
 	{
