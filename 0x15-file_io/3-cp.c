@@ -36,9 +36,14 @@ int main(int argc, char *argv[])
 	}
 	nCloseC = close(fdCreate);
 	nCloseR = close(fdRead);
-	if (nCloseC == -1 || nCloseR == -1)
+	if (nCloseC == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdCreate);
+		exit(100);
+	}
+	if (nCloseR == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fdRead);
 		exit(100);
 	}
 	return (0);
