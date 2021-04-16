@@ -6,7 +6,7 @@
 */
 unsigned long int _pow(int expo)
 {
-	unsigned long int i = 0, result = 1;
+	int i = 0, result = 1;
 
 	if (expo == 0)
 		return (1);
