@@ -13,5 +13,5 @@ main:
 	syscall
 
 	section .rodata
-msg:	 db "Hello, Holberton", 10
+msg:	 db `My first emoji in assembler \U1F60E`, 10
 len:	equ $-msg

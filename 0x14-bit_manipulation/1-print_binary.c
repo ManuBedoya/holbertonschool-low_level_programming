@@ -4,18 +4,7 @@
  * @expo: Exponent
  * Return: the pow of the number 2 whit exponent expo
 */
-unsigned long int _pow(int expo)
-{
-	int i = 0, result = 1;
 
-	if (expo == 0)
-		return (1);
-	for (i = 0; i < expo; i++)
-	{
-		result = result * 2;
-	}
-	return (result);
-}
 /**
  * print_binary - calculate from decumal to binary
  * @n: Decimal
@@ -23,7 +12,7 @@ unsigned long int _pow(int expo)
 */
 void print_binary(unsigned long int n)
 {
-	unsigned long int tmp = 0, sum = 0;
+	unsigned long int tmp = 0;
 	int i;
 
 	if (n == 0)
@@ -32,9 +21,9 @@ void print_binary(unsigned long int n)
 		_putchar('1');
 	else
 	{
-		while (_pow(tmp) < n)
+		while (n >> tmp != 0 && tmp < 64)
 			tmp++;
-		if (_pow(tmp) == n)
+		if (n >> tmp == n)
 		{
 			_putchar('1');
 			for (i = (tmp - 1); i >= 0 ; i--)
@@ -46,10 +35,9 @@ void print_binary(unsigned long int n)
 		{
 			for (i = (tmp - 1); i >= 0; i--)
 			{
-				if (sum + _pow(i) <= n)
+				if (n >> i & 1)
 				{
 					_putchar('1');
-					sum += _pow(i);
 				}
 				else
 					_putchar('0');
