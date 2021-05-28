@@ -40,7 +40,7 @@ void hash_table_print(const hash_table_t *ht)
 			{
 				printf("'%s': '%s'", aux->key, aux->value);
 				aux = aux->next;
-				if ((j != count) || aux)
+				if ((j != count - 1))
 					printf(", ");
 				j++;
 			}
