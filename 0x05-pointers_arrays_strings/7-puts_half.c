@@ -8,7 +8,7 @@
 
 int calculateLenght(char *s)
 {
-	int count = 0;
+	unsigned int count = 0;
 
 	while (s[count] != 0)
 		count++;
@@ -21,9 +21,9 @@ int calculateLenght(char *s)
 */
 void puts_half(char *str)
 {
-	int i;
-	int count = calculateLenght(str);
-	int start = count / 2;
+	unsigned int i;
+	unsigned int count = calculateLenght(str);
+	unsigned int start = count / 2;
 
 	if (count % 2 != 0)
 		start = (count - 1) / 2;
