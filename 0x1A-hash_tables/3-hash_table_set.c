@@ -4,6 +4,38 @@
 #include "hash_tables.h"
 
 /**
+ *is_key - if there are
+ *@ht: Header of the table
+ *@key: key
+ *@value: Key's value
+ *Return: 1 -> sucess or 0 -> fails
+ */
+int is_key(hash_table_t *ht, char *key, char *value)
+{
+	int i;
+	hash_node_t *aux;
+
+	for (i = 0; i < (int) ht->size; i++)
+	{
+		if (ht->array[i] != NULL)
+		{
+			aux = ht->array[i];
+			while (aux != NULL)
+			{
+				if (strcmp(aux->key, key))
+				{
+					aux->value = value;
+					return (1);
+				}
+				aux = aux->next;
+			}
+		}
+	}
+	return (0);
+}
+
+
+/**
  *hash_table_set - create a new_node
  *@ht: Header of the table
  *@key: key
@@ -25,6 +57,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	value_copy = (char *) value;
 	key_copy = (char *) key;
+
+	if (is_key(ht, key_copy, value_copy))
+		return (1);
+
 	new_node = malloc(sizeof(hash_node_t));
 
 	if (key_copy == NULL || new_node == NULL)
