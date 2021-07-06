@@ -4,18 +4,16 @@ OBJ = main.o holberton.o
 NAME = holberton
 RM = rm
 
-all: $(SRC) $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 re: oclean all
 
-holberton.o: holberton.c m.h
-
-main.o: main.c m.h
-
+%.o: %.c m.h
+	$(CC) -c -o $@ $<
 clean:
-	$(RM) -f *~ $(NAME)
+	$(RM)  *~ $(NAME)
 oclean:
-	$(RM) -f $(OBJ)
+	$(RM)  $(OBJ)
 
 fclean: clean oclean
