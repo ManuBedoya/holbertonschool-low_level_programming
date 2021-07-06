@@ -7,11 +7,7 @@ RM = rm
 all: $(SRC) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-re:
-	$(RM) -f $(OBJ)
-	$(CC) -c main.c -o main.o
-	$(CC) -c holberton.c -o holberton.o
-	$(CC) $(OBJ) -o $(NAME)
+re: oclean all
 
 holberton.o: holberton.c m.h
 
@@ -22,6 +18,4 @@ clean:
 oclean:
 	$(RM) -f $(OBJ)
 
-fclean:
-	$(RM) -f *~ $(NAME)
-	$(RM) -f $(OBJ)
+fclean: clean oclean
