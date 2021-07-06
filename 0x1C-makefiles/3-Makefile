@@ -7,7 +7,7 @@ RM = rm
 all: $(SRC) $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-re: $(SRC)
+re:
 	$(RM) -f $(OBJ)
 	$(CC) -c main.c -o main.o
 	$(CC) -c holberton.c -o holberton.o
